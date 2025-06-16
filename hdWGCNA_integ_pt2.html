@@ -173,6 +173,25 @@ Calculate the hub_df from the vignette and plug in your module eigengenes here!<
 <section id="usage-example">
 <h2>Usage Example<a class="headerlink" href="#usage-example" title="Link to this heading"></a></h2>
 <p>To run FOX, you’ll need to prepare your data (such as RSS matrices and metadata) and pass it to the class. Here’s an example of how to initialize and use FOX:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">FOXREG</span><span class="w"> </span><span class="kn">import</span> <span class="n">ComparisonTree</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+ <span class="c1"># Read in the data</span>
+ <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;rss_values_.csv&quot;</span><span class="p">)</span>  <span class="c1"># RSS values</span>
+ <span class="n">df_RAS</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;RAS_values_dataset.csv&quot;</span><span class="p">)</span>  <span class="c1"># AUC metadata</span>
+
+ <span class="c1"># Define labels for your comparison</span>
+ <span class="n">other_clusters_to_compare</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+ <span class="c1"># Initialize the ComparisonTree with your data</span>
+ <span class="n">comparison</span> <span class="o">=</span> <span class="n">ComparisonTree</span><span class="p">(</span>
+     <span class="s2">&quot;&lt;baseline cluster&gt;&quot;</span><span class="p">,</span> <span class="n">df_RAS</span><span class="p">,</span> <span class="s2">&quot;newLabels&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">other_clusters_to_compare</span><span class="p">,</span> <span class="s2">&quot;Unnamed: 0&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;3.5_regulon_scores_thresholds.tsv&quot;</span>
+ <span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </section>
 
