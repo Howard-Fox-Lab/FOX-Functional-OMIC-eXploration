@@ -102,14 +102,6 @@
 <p><strong>Step 2: Calculate AUC</strong></p>
 <p>Gene sets: Use hdWGCNA output or define manually:
 Calculate the hub_df from the vignette and plug in your module eigengenes here!</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">geneSets</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
-<span class="w">  </span><span class="n">black</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Gene1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Gene3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Gene4&quot;</span><span class="p">),</span>
-<span class="w">  </span><span class="n">blue</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Gene3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Gene2&quot;</span><span class="p">)</span>
-<span class="p">)</span>
-
-<span class="n">cells_AUC</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">AUCell_calcAUC</span><span class="p">(</span><span class="n">geneSets</span><span class="p">,</span><span class="w"> </span><span class="n">cells_rankings</span><span class="p">)</span>
-</pre></div>
-</div>
 <p><strong>Step 3: Assign cells</strong></p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot histograms and obtain thresholds</span>
 <span class="nf">set.seed</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
