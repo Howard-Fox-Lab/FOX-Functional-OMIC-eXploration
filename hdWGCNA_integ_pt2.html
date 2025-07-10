@@ -184,8 +184,8 @@
 <span class="nf">write.csv</span><span class="p">(</span><span class="n">rss</span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;rss_values_.csv&quot;</span><span class="p">)</span>
 
 <span class="c1"># Merge RAS with metadata</span>
-<span class="n">pbmc_cpy</span><span class="o">@</span><span class="n">meta.data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cbind</span><span class="p">(</span><span class="n">pbmc_cpy</span><span class="o">@</span><span class="n">meta.data</span><span class="p">,</span><span class="w"> </span><span class="nf">t</span><span class="p">(</span><span class="n">cells_test_RAS</span><span class="p">))</span>
-<span class="nf">write.csv</span><span class="p">(</span><span class="n">pbmc_cpy</span><span class="o">@</span><span class="n">meta.data</span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;RAS_values_dataset.csv&quot;</span><span class="p">)</span>
+<span class="n">Seurat_obj</span><span class="o">@</span><span class="n">meta.data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cbind</span><span class="p">(</span><span class="n">Seurat_obj</span><span class="o">@</span><span class="n">meta.data</span><span class="p">,</span><span class="w"> </span><span class="nf">t</span><span class="p">(</span><span class="n">cells_test_RAS</span><span class="p">))</span>
+<span class="nf">write.csv</span><span class="p">(</span><span class="n">Seurat_obj</span><span class="o">@</span><span class="n">meta.data</span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;RAS_values_dataset.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
